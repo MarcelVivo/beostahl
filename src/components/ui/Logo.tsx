@@ -14,13 +14,16 @@ const files = {
   voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 720, h: 247 },
 };
 
+/** Versionskennung: bei einem Logo-Wechsel erhöhen, damit Browser die neue Datei laden */
+const V = '?v=2';
+
 /** Logo als Link zur Startseite. */
 export function Logo({ tone = 'dark', variant = 'kompakt', className }: Props) {
   const f = files[variant];
   return (
     <Link to="/" aria-label="BEO Stahl & Glasbau, zur Startseite" className={cx('inline-block shrink-0', className)}>
       <img
-        src={tone === 'dark' ? f.dark : f.light}
+        src={(tone === 'dark' ? f.dark : f.light) + V}
         alt=""
         width={f.w}
         height={f.h}
