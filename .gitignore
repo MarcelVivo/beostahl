@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+.env.local
+.env*.local
+.vercel
+.DS_Store
+*.tsbuildinfo
+dist-ssr
+
+# PNG-Originale der Bilder (gross, nicht für die Website nötig)
+bilder-original/
