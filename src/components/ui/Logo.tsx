@@ -10,8 +10,8 @@ interface Props {
 }
 
 const files = {
-  kompakt: { dark: '/brand/logo-kompakt-dunkel.webp', light: '/brand/logo-kompakt-hell.webp', w: 404, h: 120 },
-  voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 720, h: 273 },
+  kompakt: { dark: '/brand/logo-kompakt-dunkel.webp', light: '/brand/logo-kompakt-hell.webp', w: 412, h: 120 },
+  voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 720, h: 247 },
 };
 
 /** Logo als Link zur Startseite. */

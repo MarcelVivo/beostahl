@@ -5,20 +5,19 @@
 - **Inhaltsquelle:** docs/firmentext.md
 - **Claim (ab 05.10.2026):** «Stahl. Glas. Solar. Für Generationen.» – identisch mit dem Slogan im Logo. «Alles aus einer Hand» bleibt Leistungsversprechen (Warum BEO, Produktvorteile).
 
-## Logo (ab 05.10.2026)
+## Logo (ab 05.10.2026, Gold-Fassung)
 
-Offizielles Logo: Metall-Schriftzug «BEO», darunter «STAHL & GLASBAU» und der Slogan «Stahl. Glas. Solar. Für Generationen.»
-Original: `bilder-original/logo/BEO-Stahl&GlasbauLogo.png` (1956 × 804, weisser Hintergrund).
+Offizielles Logo: Metall-Schriftzug «BEO» mit Goldkanten, darunter «STAHL & GLASBAU», Goldlinie und Slogan «Stahl. Glas. Solar. Für Generationen.»
+Original mit transparentem Hintergrund: `bilder-original/logo/BEO-Logo-Gold.png` (2172 × 724). Gestaltet für dunklen Grund.
+Vorherige Silber-Fassung: `bilder-original/logo/v1-silber/`.
 
-Für die Website freigestellt (transparenter Hintergrund) in `public/brand/`:
+Website-Dateien in `public/brand/`:
 
 | Datei | Verwendung |
 |---|---|
-| `logo-kompakt-dunkel.webp` / `-hell.webp` | Header (ohne Slogan, auf dunklem bzw. hellem Grund) |
-| `logo-dunkel.webp` / `logo-hell.webp` | Footer (mit Slogan) |
-| `logo.png` / `logo-inverse.png` | Hochauflösend, für strukturierte Daten und Weitergabe (schwarze bzw. weisse Schrift) |
+| `logo-kompakt-dunkel.webp` | Header (ohne Linie und Slogan) |
+| `logo-dunkel.webp` | Footer (mit Slogan) |
+| `logo.png` | Strukturierte Daten, Weitergabe (800 px, transparent) |
+| `*-hell.webp`, `logo-inverse.png` | identische Kopien, damit bestehende Verweise funktionieren |
 
-Auf dunklem Grund ist die Schrift weiss und das Metall leicht aufgehellt.
-Icons in `public/`: `favicon-32.png` und `favicon-64.png` (Buchstabe «B»), `apple-touch-icon.png` und `icon-512.png` (Schriftzug «BEO»), jeweils auf Anthrazit.
-
-Das frühere, von Claude entworfene Logo liegt nur noch als Archiv in `docs/brand/altes-logo/`.
+Icons in `public/`: `favicon-32.png`, `favicon-64.png` (Buchstabe «B»), `apple-touch-icon.png`, `icon-512.png` (Schriftzug «BEO»), jeweils auf Anthrazit.

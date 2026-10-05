@@ -86,7 +86,8 @@ export async function POST(request: Request): Promise<Response> {
 
   try {
     const best = bestaetigungsMail(d, { telefon: process.env.ANFRAGE_TELEFON, website: 'beostahlbau.ch' });
-    await sendMail({ apiKey, from, to: d.email.trim(), ...best, idempotencyKey: `best-${idem}` });
+    // Antworten auf die Bestätigung gehen an BEO, nicht an die reine Absenderadresse
+    await sendMail({ apiKey, from, to: d.email.trim(), replyTo: to, ...best, idempotencyKey: `best-${idem}` });
   } catch (e) {
     // Die Anfrage ist bei BEO angekommen. Eine fehlende Bestätigung ist kein Fehler für die Person.
     console.error('Bestätigungsmail fehlgeschlagen', e);
