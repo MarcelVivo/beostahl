@@ -43,10 +43,13 @@ export function SolarBalkongelaenderPage() {
       <section className="bg-steel text-white">
         <div className="container-site pt-10 pb-16 lg:pt-14 lg:pb-24">
           <Breadcrumbs items={[{ label: 'Leistungen', to: '/leistungen' }, { label: l.title, to: `/leistungen/${SOLAR_BALKON_SLUG}` }]} />
-          <div className="mt-12 grid items-center gap-12 lg:mt-16 lg:grid-cols-[6fr_5fr] lg:gap-16">
+          <div className="mt-12 grid items-stretch gap-12 lg:mt-16 lg:grid-cols-[5fr_6fr] lg:gap-14">
             <div>
               <p className="eyebrow mb-6 text-gold">Design · Energie · Qualität</p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl">{l.title}</h1>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl">
+                Solar-<wbr />
+                Balkon­geländer
+              </h1>
               <span aria-hidden className="gold-rule mt-8 w-24" />
               <p className="claim-script mt-8 text-4xl text-white/90 sm:text-5xl">{solarClaim}</p>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
@@ -58,21 +61,32 @@ export function SolarBalkongelaenderPage() {
                 <Button to="#varianten" variant="outline-light">Varianten ansehen</Button>
               </div>
             </div>
-            <ul className="grid grid-cols-3 gap-2 sm:gap-3" aria-label="Beispiele">
-              {solarVarianten.map((v, i) => (
-                <li key={v.nr} className={cx('overflow-hidden', i % 2 === 1 && 'translate-y-4')}>
-                  <Img
-                    src={solarBild(v.nr, 'beispiel')}
-                    alt={`Visualisierung Solar-Balkongeländer, Beispiel ${v.beispiel}`}
-                    width={1600}
-                    height={1200}
-                    responsive
-                    sizes="(min-width: 1024px) 15vw, 33vw"
-                    className="aspect-[4/5] h-full w-full object-cover"
-                  />
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:min-h-[30rem] lg:grid-cols-[3fr_2fr] lg:grid-rows-2">
+              {[
+                { nr: 2, cls: 'col-span-2 aspect-[4/3] lg:col-span-1 lg:row-span-2 lg:aspect-auto' },
+                { nr: 3, cls: 'aspect-[4/3] lg:aspect-auto' },
+                { nr: 5, cls: 'aspect-[4/3] lg:aspect-auto' },
+              ].map(({ nr: n, cls }, i) => {
+                const v = solarVarianten.find((x) => x.nr === n)!;
+                return (
+                  <figure key={n} className={cx('relative overflow-hidden', cls)}>
+                    <Img
+                      src={solarBild(n, 'beispiel')}
+                      alt={`Visualisierung Solar-Balkongeländer, Beispiel ${v.beispiel}`}
+                      width={1600}
+                      height={1200}
+                      responsive
+                      sizes={i === 0 ? '(min-width: 1024px) 30vw, 100vw' : '(min-width: 1024px) 20vw, 50vw'}
+                      priority={i === 0}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel/85 to-transparent px-4 pt-8 pb-3 font-display text-[0.625rem] tracking-[0.14em] text-white uppercase">
+                      {v.beispiel}
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
