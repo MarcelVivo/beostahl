@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/Button';
 import { Reveal } from '@/components/ui/Reveal';
 import { NotFoundPage } from './NotFoundPage';
 import { KonstruktionsFigur } from '@/components/zeichnungen/KonstruktionsFigur';
+import { FontanaTeaser } from '@/components/sections/FontanaTeaser';
 import { LEISTUNG_ZEICHNUNG } from '@/components/zeichnungen/konfig';
 
 const EINSATZ = 'Einsatzbereiche';
@@ -182,6 +183,13 @@ export function LeistungPage() {
           </ul>
         </div>
       </section>
+
+      {(l.slug === 'terrassenueberdachungen' || l.slug === 'wintergaerten') && (
+        <FontanaTeaser
+          className="border-b border-white/10"
+          text={l.slug === 'wintergaerten' ? 'Holzofen oder Pizzaofen für den Wintergarten: Fontana Forni aus Italien, eingebaut von BEO.' : 'Aussenküche, Pizzaofen oder Grill unter Ihrer neuen Überdachung: Fontana Forni, montiert von BEO.'}
+        />
+      )}
 
       <CtaBlock preselect={l.slug} title={`${l.title} für Ihr Projekt?`} />
     </>

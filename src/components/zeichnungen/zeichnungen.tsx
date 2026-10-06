@@ -461,7 +461,43 @@ const renovation: Fn = (ids) => ({
   a: { bestand: [380, 150], verstaerkung: [360, 166], erweiterung: [210, 154], gelaender: [118, 46], solar: [118, 100], stuetze: [130, 230] },
 });
 
+
+/* ── Aussenküche mit Pizzaofen unter Terrassenüberdachung ───── */
+const aussenkueche: Fn = (ids) => ({
+  el: (
+    <g>
+      <Terrain ids={ids} x1={30} x2={420} />
+      <Wand ids={ids} x={420} y={30} w={50} h={284} />
+      <Text x={445} y={24}>Hauswand</Text>
+      <Rect x={150} y={288} w={240} h={12} f={`url(#${ids.beton})`} />
+      <Fundament ids={ids} x={96} w={28} />
+      <Rect x={104} y={136} w={14} h={164} f={C.stahl} />
+      <GlasBand a={[96, 128]} b={[420, 98]} d={6} />
+      <Traeger a={[100, 132]} b={[416, 103]} d={6} f={C.stahlHell} />
+      <Rect x={410} y={92} w={10} h={24} f={C.stahlHell} />
+      <Schraube x={415} y={104} />
+      <Rect x={170} y={214} w={200} h={74} f={C.stahl} />
+      <Rect x={176} y={222} w={60} h={60} f="#2B2F36" />
+      {[0, 1, 2, 3].map((k) => <Rect key={k} x={182 + k * 13} y={232} w={8} h={44} f="#3A3F45" />)}
+      <Rect x={244} y={222} w={58} h={60} f="#2B2F36" />
+      <Rect x={310} y={222} w={54} h={60} f="#2B2F36" />
+      <Rect x={164} y={206} w={212} h={8} f={C.edelstahl} />
+      <path d="M248,206 L248,186 Q248,150 286,150 Q324,150 324,186 L324,206 Z" fill="#B23A2B" stroke={C.linie} strokeWidth={0.7} />
+      <path d="M268,206 L268,192 Q268,180 286,180 Q304,180 304,192 L304,206 Z" fill="#1E2226" />
+      <path d="M276,204 q4,-14 10,-6 q6,-12 10,6 Z" fill={C.led} />
+      <Rect x={280} y={88} w={12} h={64} f={C.edelstahl} />
+      <Rect x={274} y={78} w={24} h={10} f={C.edelstahl} />
+      <Rect x={272} y={100} w={28} h={8} f={C.belag} />
+      <path d="M340,206 q6,-10 0,-18 q-6,8 0,18" fill="none" stroke={C.hilfslinie} strokeWidth={1} />
+      <Linie a={[364, 280]} b={[420, 280]} s="#C8A23A" w={2} dash="6 3" />
+      <Text x={392} y={274} size={9}>Gas</Text>
+    </g>
+  ),
+  a: { dach: [200, 122], stuetze: [111, 230], ofen: [300, 172], rauchrohr: [286, 120], durchfuehrung: [286, 104], arbeitsplatte: [200, 210], unterbau: [340, 250], holzlager: [206, 252], anschluss: [400, 280], fundament: [270, 294] },
+});
+
 export const ZEICHNUNGEN = {
+  aussenkueche,
   carport,
   terrasse: terrasse(false),
   terrasseSolar: terrasse(true),

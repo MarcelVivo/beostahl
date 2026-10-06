@@ -8,6 +8,7 @@ import { leistungen } from '@/data/leistungen';
 import { gruende } from '@/data/gruende';
 import { referenzen } from '@/data/referenzen';
 import { ReferenzCard } from '@/components/cards/ReferenzCard';
+import { FontanaTeaser } from '@/components/sections/FontanaTeaser';
 import { Hero } from '@/components/sections/Hero';
 import { CtaBlock } from '@/components/sections/CtaBlock';
 import { ProcessSteps } from '@/components/sections/ProcessSteps';
@@ -272,6 +273,8 @@ export function HomePage() {
         </h2>
         <AudienceSplit />
       </section>
+
+      <FontanaTeaser className="border-b border-white/10" />
 
       {/* 9 CTA */}
       <CtaBlock />

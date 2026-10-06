@@ -62,7 +62,7 @@ export function ImpressumPage() {
               Texte, Bilder, Grafiken und weitere Inhalte dieser Website gehören {site.name} oder den genannten Rechteinhabern. Für jede
               Verwendung ist die schriftliche Zustimmung erforderlich.
             </p>
-            <p>Bildnachweis: [FOTOGRAFIN / FOTOGRAF, QUELLE]</p>
+            <p>Bildnachweis: [FOTOGRAFIN / FOTOGRAF, QUELLE]. Logo und Produktbilder Fontana: © Fontana Forni, Verwendung als offizieller Vertriebspartner.</p>
             <p>Schriften: Michroma, Inter und Allura unter der SIL Open Font License.</p>
           </Prose>
         </div>

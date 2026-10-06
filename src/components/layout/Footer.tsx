@@ -70,6 +70,7 @@ export function Footer() {
             {[
               ['/ueber-uns', 'Über uns'],
               ['/referenzen', 'Referenzen'],
+              ['/fontana-forni', 'Partner: Fontana Forni'],
               ['/projektablauf', 'Projektablauf'],
               ['/warum-beo', 'Warum BEO'],
               ['/privatkunden', 'Für Privatkunden'],

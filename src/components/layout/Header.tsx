@@ -168,6 +168,11 @@ Projekt anfragen
                               Alle Leistungen im Überblick
                             </Link>
                           </li>
+                          <li>
+                            <Link to="/fontana-forni" className="flex min-h-11 items-center gap-3 text-[0.9375rem] text-white/80">
+                              <span className="eyebrow text-gold">Partner</span> Fontana Forni
+                            </Link>
+                          </li>
                           {leistungen.map((l) => (
                             <li key={l.slug}>
                               <Link to={`/leistungen/${l.slug}`} className="flex min-h-11 items-center gap-3 text-[0.9375rem] text-white/80">

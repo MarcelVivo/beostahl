@@ -33,6 +33,9 @@ export const PRODUKTE_KATALOG = [
   { slug: 'balcony-b1-pure', label: 'BEO Balcony B1 Pure' },
 ] as const;
 
-const ALLE = new Map<string, string>([...LEISTUNGEN_KATALOG, ...PRODUKTE_KATALOG].map((x) => [x.slug, x.label]));
+/** Partnerprodukte (nicht Teil von src/data/produkte) */
+export const PARTNER_KATALOG = [{ slug: 'fontana-forni', label: 'Fontana Forni: Pizzaofen, Grill, Aussenküche' }] as const;
+
+const ALLE = new Map<string, string>([...LEISTUNGEN_KATALOG, ...PRODUKTE_KATALOG, ...PARTNER_KATALOG].map((x) => [x.slug, x.label]));
 export const loesungLabel = (slug: string) => ALLE.get(slug);
 export const istLoesung = (slug: string) => ALLE.has(slug);

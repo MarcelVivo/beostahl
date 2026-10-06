@@ -36,7 +36,11 @@ export function MegaMenu({ id, onNavigate }: Props) {
       </div>
       <div className="border-t border-white/10">
         <div className="container-site flex items-center justify-between py-5">
-          <p className="text-sm text-white/70">Stahl. Glas. Solar. Von der Idee bis zur Montage.</p>
+          <Link to="/fontana-forni" onClick={onNavigate} className="group inline-flex min-h-11 items-center gap-3 text-sm text-white/70 hover:text-white">
+            <span className="eyebrow text-gold">Partner</span>
+            <img src="/brand/partner/fontana-white.svg" alt="Fontana Forni" width={148} height={14} className="h-3.5 w-auto opacity-80 group-hover:opacity-100" />
+            <span>Pizzaöfen, Grills, Aussenküchen</span>
+          </Link>
           <Link
             to="/leistungen"
             onClick={onNavigate}

@@ -5,7 +5,7 @@ import {
   BUDGETS, DATEI, KUNDENTYPEN, ZEITRAEUME, pruefeAnfrage, pruefeDatei, sichererName,
   type AnfrageDaten, type AnfrageDatei, type Fehler,
 } from '../../../shared/anfrage';
-import { LEISTUNGEN_KATALOG, PRODUKTE_KATALOG, istLoesung } from '../../../shared/katalog';
+import { LEISTUNGEN_KATALOG, PARTNER_KATALOG, PRODUKTE_KATALOG, istLoesung } from '../../../shared/katalog';
 import { Button } from '@/components/ui/Button';
 import { Chip, fieldId, FieldMessage, Select, TextArea, TextField } from './Field';
 import { FileUpload, type DateiEintrag } from './FileUpload';
@@ -226,6 +226,14 @@ export function InquiryForm() {
           <p className="eyebrow mt-6 mb-3 text-graphite">Produkte</p>
           <div className="flex flex-wrap gap-2">
             {PRODUKTE_KATALOG.map((p) => (
+              <Chip key={p.slug} type="checkbox" name="loesungen" value={p.slug} checked={d.loesungen.includes(p.slug)} onChange={() => toggleLoesung(p.slug)} invalid={!!errors.loesungen}>
+                {p.label}
+              </Chip>
+            ))}
+          </div>
+          <p className="eyebrow mt-6 mb-3 text-graphite">Partner</p>
+          <div className="flex flex-wrap gap-2">
+            {PARTNER_KATALOG.map((p) => (
               <Chip key={p.slug} type="checkbox" name="loesungen" value={p.slug} checked={d.loesungen.includes(p.slug)} onChange={() => toggleLoesung(p.slug)} invalid={!!errors.loesungen}>
                 {p.label}
               </Chip>

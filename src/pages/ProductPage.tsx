@@ -17,6 +17,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { Reveal } from '@/components/ui/Reveal';
 import { NotFoundPage } from './NotFoundPage';
+import { FontanaTeaser } from '@/components/sections/FontanaTeaser';
 
 export function ProductPage() {
   const { slug = '' } = useParams();
@@ -126,6 +127,8 @@ export function ProductPage() {
           </ul>
         </div>
       </section>
+
+      {(p.slug === 'living-w20-pro' || p.slug === 'terrace-t6-solar-glass') && <FontanaTeaser className="border-b border-white/10" />}
 
       <CtaBlock
         preselect={p.slug}
