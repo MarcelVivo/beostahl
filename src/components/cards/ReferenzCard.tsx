@@ -13,6 +13,7 @@ export function ReferenzCard({ r }: { r: Referenz }) {
           alt={r.bilder[0]?.alt ?? r.title}
           width={624}
           height={468}
+          deferred
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
         />
         <span className="absolute top-4 left-4 bg-steel px-3 py-1.5 font-display text-[0.625rem] tracking-[0.16em] text-gold uppercase">

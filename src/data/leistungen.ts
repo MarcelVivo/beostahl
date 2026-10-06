@@ -1,7 +1,7 @@
 import {
   Car, Umbrella, DoorOpen, Sprout, Building, PanelsTopLeft, Fence,
   ChartNoAxesColumnIncreasing, Construction, Warehouse, VolumeX, SolarPanel,
-  Wind, SunMedium, PencilRuler, RefreshCw,
+  Wind, SunMedium, PencilRuler, RefreshCw, Sun,
 } from 'lucide-react';
 import type { Leistung, LeistungsGruppe } from './types';
 
@@ -162,6 +162,29 @@ export const leistungen: Leistung[] = [
     seo: {
       title: 'Ganzglasgeländer für Balkon, Terrasse und Treppe',
       description: 'Rahmenlose Ganzglasgeländer in klarem, getöntem oder mattem Glas für Balkone, Terrassen, Treppen und Galerien. BEO Stahl & Glasbau.',
+    },
+  },
+  {
+    slug: 'solar-balkongelaender',
+    title: 'Solar-Balkongeländer',
+    teaser: 'Balkongeländer mit integrierter Photovoltaik, in sechs Varianten von klassisch bis rahmenlos.',
+    group: 'Wohnen mit Glas',
+    icon: Sun,
+    intro: [
+      'Mehr als ein Geländer: Solar-Balkongeländer schützen, gestalten die Fassade und erzeugen Energie für Ihr Zuhause.',
+      'Für Neubau und Sanierung, vom Mehrfamilienhaus bis zum Chalet.',
+    ],
+    lists: [
+      {
+        title: 'Varianten',
+        items: ['Klassik', 'Ganzglas Premium', 'Holz-Design', 'Rahmenlos (unsichtbare Befestigung)', 'Indachpanel (unsichtbare Konstruktion)', 'Kombination Glas + Solar'],
+      },
+      { title: 'Einsatzbereiche', items: ['Mehrfamilienhäuser', 'Hotels', 'Chalets', 'Neubauten', 'Sanierungen'] },
+    ],
+    produkte: [],
+    seo: {
+      title: 'Solar-Balkongeländer: Balkongeländer mit Photovoltaik',
+      description: 'Solar-Balkongeländer in sechs Varianten: Klassik, Ganzglas, Holz-Design, rahmenlos, Indachpanel und Glas + Solar. Mit Schnitten und Konstruktionsdetails.',
     },
   },
   {

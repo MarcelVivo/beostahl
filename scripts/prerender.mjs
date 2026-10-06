@@ -27,10 +27,17 @@ function splitHead(html) {
   return { head, body: rest };
 }
 
+/** JavaScript mit niedriger Priorität laden: Die Seite ist vorgerendert, Bilder und Layout haben Vorrang. */
+function niedrigePrioritaet(html) {
+  return html
+    .replace(/<script type="module" crossorigin src=/g, '<script type="module" crossorigin fetchpriority="low" src=')
+    .replace(/<link rel="modulepreload" crossorigin href=/g, '<link rel="modulepreload" crossorigin fetchpriority="low" href=');
+}
+
 function page(html) {
   const { head, body } = splitHead(html);
   if (!head.includes('<title>')) throw new Error('Seite ohne <title>');
-  return template.replace('<!--app-head-->', head).replace('<!--app-html-->', body);
+  return niedrigePrioritaet(template.replace('<!--app-head-->', head).replace('<!--app-html-->', body));
 }
 
 function outFile(p) {

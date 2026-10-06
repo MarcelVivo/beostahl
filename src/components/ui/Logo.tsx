@@ -11,11 +11,11 @@ interface Props {
 
 const files = {
   kompakt: { dark: '/brand/logo-kompakt-dunkel.webp', light: '/brand/logo-kompakt-hell.webp', w: 412, h: 120 },
-  voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 720, h: 247 },
+  voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 640, h: 220 },
 };
 
 /** Versionskennung: bei einem Logo-Wechsel erhöhen, damit Browser die neue Datei laden */
-const V = '?v=2';
+const V = '?v=3';
 
 /** Logo als Link zur Startseite. */
 export function Logo({ tone = 'dark', variant = 'kompakt', className }: Props) {
@@ -27,6 +27,8 @@ export function Logo({ tone = 'dark', variant = 'kompakt', className }: Props) {
         alt=""
         width={f.w}
         height={f.h}
+        loading={variant === 'voll' ? 'lazy' : undefined}
+        decoding="async"
         className={variant === 'kompakt' ? 'h-10 w-auto sm:h-12' : 'h-auto w-64 sm:w-80'}
       />
     </Link>

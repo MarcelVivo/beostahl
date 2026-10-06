@@ -10,6 +10,7 @@ export const LEISTUNGEN_KATALOG = [
   { slug: 'wintergaerten', label: 'Wintergärten und Glasanbauten' },
   { slug: 'anbaubalkone', label: 'Anbaubalkone und Balkonanlagen' },
   { slug: 'ganzglasgelaender', label: 'Ganzglasgeländer' },
+  { slug: 'solar-balkongelaender', label: 'Solar-Balkongeländer' },
   { slug: 'gelaender', label: 'Geländer' },
   { slug: 'treppen', label: 'Treppen' },
   { slug: 'stahlbau', label: 'Stahlbau' },

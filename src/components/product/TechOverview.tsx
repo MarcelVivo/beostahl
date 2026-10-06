@@ -4,9 +4,12 @@ import { RICHTWERT_HINWEIS } from '@/data/produkte';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { TechDrawing } from './TechDrawing';
+import { KonstruktionsFigur } from '@/components/zeichnungen/KonstruktionsFigur';
+import { PRODUKT_ZEICHNUNG } from '@/components/zeichnungen/konfig';
 
 /** Block «Technik im Überblick»: Ansichten mit Massen, wie auf den Plakaten. */
 export function TechOverview({ p }: { p: Produkt }) {
+  const k = PRODUKT_ZEICHNUNG[p.slug];
   return (
     <section id="technik" aria-labelledby="technik-title" className="section scroll-mt-24 bg-white">
       <div className="container-site">
@@ -27,7 +30,19 @@ export function TechOverview({ p }: { p: Produkt }) {
           </div>
         )}
 
-        <dl className="mt-10 grid gap-px overflow-hidden bg-line sm:grid-cols-3">
+        {k && (
+          <Reveal className="mt-14">
+            <KonstruktionsFigur
+              zeichnung={k.zeichnung}
+              titel={`Konstruktionsdetail ${p.name}`}
+              legende={p.details.map((d, i) => ({ text: d.title, anker: k.anker[i] ?? '' }))}
+              zweistellig
+              hinweis="Die Nummern entsprechen den Detailbildern oben. Nicht massstäblich, Beispielkonfiguration."
+            />
+          </Reveal>
+        )}
+
+        <dl className="mt-10 grid gap-px overflow-hidden bg-line sm:grid-cols-[repeat(auto-fit,minmax(12rem,1fr))]">
           {p.masse.map((m) => (
             <div key={m.label} className="bg-white p-6">
               <dt className="eyebrow flex items-center gap-4 text-graphite">

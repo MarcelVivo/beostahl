@@ -15,6 +15,7 @@ export function ProductCard({ p, headingLevel = 'h3' }: { p: Produkt; headingLev
           width={1920}
           height={1080}
           responsive
+          deferred
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
         />

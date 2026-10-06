@@ -94,7 +94,7 @@ export function ReferenzPage() {
                 <Reveal delay={(i % 2) * 80}>
                   <figure className="bg-white p-4 ring-1 ring-line sm:p-6">
                     <a href={`/images/referenzen/${b.file}`} target="_blank" rel="noopener" className="block">
-                      <Img src={`/images/referenzen/${b.file}`} alt={b.alt} width={640} height={480} className="h-56 w-full object-contain sm:h-72" />
+                      <Img src={`/images/referenzen/${b.file}`} alt={b.alt} width={640} height={480} deferred className="h-56 w-full object-contain sm:h-72" />
                       <span className="sr-only"> (in voller Grösse, neuer Tab)</span>
                     </a>
                     <figcaption className="mt-4 flex items-baseline gap-3 border-t border-gold pt-3">

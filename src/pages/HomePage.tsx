@@ -188,6 +188,7 @@ export function HomePage() {
               height={1200}
               responsive
               sizes="(min-width: 1024px) 50vw, 100vw"
+              deferred
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>

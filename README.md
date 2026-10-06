@@ -97,6 +97,17 @@ Die Website ist zurzeit nur als Demo online. In `vercel.json` sendet jede Seite 
 
 Die Website setzt keine Cookies und lädt keine externen Dienste. Für cookielose Statistiken kann Vercel Web Analytics aktiviert werden (Paket `@vercel/analytics`). Dann den entsprechenden Absatz in der Datenschutzerklärung aktivieren.
 
+## Technische Zeichnungen
+
+Schematische Konstruktionszeichnungen sind als SVG im Code gezeichnet, nicht als Bilder:
+
+- `src/components/zeichnungen/kit.tsx` – Farben, Materialien, Bausteine
+- `src/components/zeichnungen/zeichnungen.tsx` – die Zeichnungen mit benannten Ankerpunkten
+- `src/components/zeichnungen/konfig.ts` – Zuordnung zu Leistungen und Produkten samt Legende
+- `src/components/solar/Zeichnungen.tsx` – Schnitte und Explosionszeichnungen der Solar-Balkongeländer
+
+Nummern in der Zeichnung und Legende werden aus derselben Liste erzeugt und stimmen deshalb immer überein. Bei Produkten entsprechen die Nummern den sechs Detailbildern.
+
 ## Qualität
 
 Gemessen lokal mit Komprimierung wie auf Vercel, Lighthouse 12, 10 Seiten, Handy und Desktop: Performance 97 bis 100, Barrierefreiheit, Best Practices und SEO je 100. axe-core (WCAG 2.1 AA) ohne Befund auf allen 36 Seiten.

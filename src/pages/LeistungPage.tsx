@@ -16,6 +16,8 @@ import { CheckList } from '@/components/ui/CheckList';
 import { Button } from '@/components/ui/Button';
 import { Reveal } from '@/components/ui/Reveal';
 import { NotFoundPage } from './NotFoundPage';
+import { KonstruktionsFigur } from '@/components/zeichnungen/KonstruktionsFigur';
+import { LEISTUNG_ZEICHNUNG } from '@/components/zeichnungen/konfig';
 
 const EINSATZ = 'Einsatzbereiche';
 
@@ -29,6 +31,7 @@ export function LeistungPage() {
   const produkte = l.produkte.map(getProdukt).filter((p) => p !== undefined);
   const verwandt = leistungen.filter((x) => x.group === l.group && x.slug !== l.slug);
   const refs = referenzenFuer(l.slug);
+  const konstruktion = LEISTUNG_ZEICHNUNG[l.slug];
 
   return (
     <>
@@ -88,6 +91,24 @@ export function LeistungPage() {
           </div>
         </div>
       </section>
+
+      {/* Konstruktionsprinzip */}
+      {konstruktion && (
+        <section aria-labelledby="konstruktion-title" className="section bg-concrete on-light">
+          <div className="container-site">
+            <Reveal>
+              <SectionHeading id="konstruktion-title" eyebrow="Technik" title="Konstruktionsprinzip" />
+            </Reveal>
+            <Reveal className="mt-12">
+              <KonstruktionsFigur
+                zeichnung={konstruktion.zeichnung}
+                titel={konstruktion.titel}
+                legende={konstruktion.legende.map(([text, anker]) => ({ text, anker }))}
+              />
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* Einsatzbereiche */}
       {einsatz && (

@@ -17,6 +17,7 @@ export function DetailGrid({ items }: { items: DetailBild[] }) {
                   alt={d.alt}
                   width={800}
                   height={800}
+                  deferred
                   className="h-full w-full object-cover"
                 />
               </div>

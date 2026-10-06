@@ -99,6 +99,51 @@
   }
 }
 
+/* ── Technische Zeichnungen: Aufbau, Hervorhebung, Auffächern ───── */
+/* Aufbau von unten nach oben (Fundament zuerst), dann Hinweislinien und Nummern */
+/* Bauteile setzen sich nacheinander ein (von oben an ihren Platz) */
+.zg-pending .zg-stueck { opacity: 0; transform: translateY(-30px); }
+.zg-run .zg-stueck {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 450ms ease-out min(calc(var(--s, 0) * 85ms), 1500ms),
+    transform 650ms var(--ease-calm) min(calc(var(--s, 0) * 85ms), 1500ms);
+}
+.zg-pending .zg-linie { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.zg-run .zg-linie {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 450ms ease-out calc(1700ms + var(--i, 0) * 80ms);
+}
+.zg-pending .zg-punkt { opacity: 0; }
+.zg-run .zg-punkt { opacity: 1; transition: opacity 250ms ease-out calc(1700ms + var(--i, 0) * 80ms); }
+.zg-nr { transform-box: fill-box; transform-origin: center; }
+.zg-pending .zg-nr { opacity: 0; transform: scale(0.6); }
+.zg-run .zg-nr {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 300ms ease-out calc(1900ms + var(--i, 0) * 80ms),
+    transform 300ms var(--ease-calm) calc(1900ms + var(--i, 0) * 80ms);
+}
+/* Hervorhebung: aktives Bauteil gold, übrige zurückgenommen */
+.zg-callout { transition: opacity 200ms ease; }
+.zg-hat-aktiv .zg-callout:not(.is-aktiv) { opacity: 0.3; }
+.zg-teil { transition: opacity 200ms ease; }
+.zg-hat-aktiv .zg-teil:not(.is-aktiv) { opacity: 0.28; }
+.zg-halo { transform-box: fill-box; transform-origin: center; animation: zg-puls 1.4s ease-out infinite; }
+@keyframes zg-puls {
+  0% { transform: scale(0.5); opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+/* Explosionszeichnung: Schichten fächern sich mit dem Scrollen auf (--p von 0 bis 1) */
+.zg-schicht { transition: opacity 200ms ease; }
+.zg-labels { opacity: clamp(0, calc((var(--p, 1) - 0.9) * 10), 1); transition: opacity 150ms linear; }
+@media (prefers-reduced-motion: reduce) {
+  .zg-halo { animation: none; }
+}
+
 /* ── Fade-in beim Scrollen ──────────────────────────────────
    Nur Elemente unterhalb des sichtbaren Bereichs werden beim Laden
    versteckt (Klasse .reveal-pending, gesetzt per JavaScript). */

@@ -56,6 +56,13 @@ Alle Bilder der Website sind jetzt Visualisierungen statt Platzhalter (Stand 05.
 
 Neue Bilder: im Ordner `public/images/neu/` ablegen (Dateinamen siehe `docs/bild-prompts.md`) und Claude um Übernahme bitten.
 
+## Solar-Balkongeländer (`src/data/solarBalkon.ts`)
+
+- Bilder stammen aus der Übersichtsgrafik `bilder-original/Solar-Balkongelaender-Uebersicht.jpg` (1312 × 1199) und sind deshalb klein (je etwa 215 px breit, für die Website verdoppelt). Schärfere Einzelbilder pro Variante würden die Seite deutlich aufwerten. Dateinamen: `public/images/solar-balkongelaender/variante-<1–6>-<foto|schnitt|explosion|beispiel>.webp`.
+- In der Vorlage passen einige Nummern in den Schnitten nicht zur Legende (z. B. Schnitt D zeigt «8», Legende endet bei 7; Schnitt B zeigt «3» doppelt). Die Legenden wurden wörtlich übernommen. Bitte in der Quellgrafik prüfen.
+- Die Vorlage zeigt im Kopf noch ein älteres BEO-Logo. Auf der Website wird die Grafik nur in Ausschnitten ohne Logo verwendet.
+- Aussage «In der ganzen Schweiz und Europa» stammt aus der Vorlage. Bitte bestätigen, dass sie so gelten soll.
+
 ## Inhalte zur fachlichen Prüfung (keine Platzhalter, aber abgeleitet)
 
 - Die vier Vorteile pro Produkt (`src/data/produkte.ts`, Feld `vorteile`) sind aus Tabelle und Firmentext abgeleitet.

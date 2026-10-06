@@ -1,25 +1,13 @@
+import type { ComponentType } from 'react';
 import type { RouteObject } from 'react-router';
 import { Layout } from '@/components/layout/Layout';
-import { HomePage } from '@/pages/HomePage';
-import { LeistungenPage } from '@/pages/LeistungenPage';
-import { LeistungPage } from '@/pages/LeistungPage';
-import { ProduktePage } from '@/pages/ProduktePage';
-import { ProductPage } from '@/pages/ProductPage';
-import { ProjektablaufPage } from '@/pages/ProjektablaufPage';
-import { WarumBeoPage } from '@/pages/WarumBeoPage';
-import { PrivatkundenPage } from '@/pages/PrivatkundenPage';
-import { FachpartnerPage } from '@/pages/FachpartnerPage';
-import { AnfragePage } from '@/pages/AnfragePage';
-import { KontaktPage } from '@/pages/KontaktPage';
-import { UeberUnsPage } from '@/pages/UeberUnsPage';
-import { ImpressumPage } from '@/pages/ImpressumPage';
-import { DatenschutzPage } from '@/pages/DatenschutzPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
-import { ReferenzenPage } from '@/pages/ReferenzenPage';
-import { ReferenzPage } from '@/pages/ReferenzPage';
 import { referenzen } from '@/data/referenzen';
 import { leistungen } from '@/data/leistungen';
 import { produkte } from '@/data/produkte';
+
+/** Seite erst bei Bedarf laden (eigene JS-Datei pro Seite) */
+const lazy = (load: () => Promise<Record<string, unknown>>, name: string) => async () => ({ Component: (await load())[name] as ComponentType });
 
 /** Alle Routen. Als Array definiert, damit sie beim Build vorgerendert werden. */
 export const routes: RouteObject[] = [
@@ -27,22 +15,23 @@ export const routes: RouteObject[] = [
     path: '/',
     element: <Layout />,
     children: [
-      { index: true, element: <HomePage /> },
-      { path: 'leistungen', element: <LeistungenPage /> },
-      { path: 'leistungen/:slug', element: <LeistungPage /> },
-      { path: 'produkte', element: <ProduktePage /> },
-      { path: 'produkte/:slug', element: <ProductPage /> },
-      { path: 'referenzen', element: <ReferenzenPage /> },
-      { path: 'referenzen/:slug', element: <ReferenzPage /> },
-      { path: 'projektablauf', element: <ProjektablaufPage /> },
-      { path: 'warum-beo', element: <WarumBeoPage /> },
-      { path: 'privatkunden', element: <PrivatkundenPage /> },
-      { path: 'fachpartner', element: <FachpartnerPage /> },
-      { path: 'anfrage', element: <AnfragePage /> },
-      { path: 'kontakt', element: <KontaktPage /> },
-      { path: 'ueber-uns', element: <UeberUnsPage /> },
-      { path: 'impressum', element: <ImpressumPage /> },
-      { path: 'datenschutz', element: <DatenschutzPage /> },
+      { index: true, lazy: lazy(() => import('@/pages/HomePage'), 'HomePage') },
+      { path: 'leistungen', lazy: lazy(() => import('@/pages/LeistungenPage'), 'LeistungenPage') },
+      { path: 'leistungen/solar-balkongelaender', lazy: lazy(() => import('@/pages/SolarBalkongelaenderPage'), 'SolarBalkongelaenderPage') },
+      { path: 'leistungen/:slug', lazy: lazy(() => import('@/pages/LeistungPage'), 'LeistungPage') },
+      { path: 'produkte', lazy: lazy(() => import('@/pages/ProduktePage'), 'ProduktePage') },
+      { path: 'produkte/:slug', lazy: lazy(() => import('@/pages/ProductPage'), 'ProductPage') },
+      { path: 'referenzen', lazy: lazy(() => import('@/pages/ReferenzenPage'), 'ReferenzenPage') },
+      { path: 'referenzen/:slug', lazy: lazy(() => import('@/pages/ReferenzPage'), 'ReferenzPage') },
+      { path: 'projektablauf', lazy: lazy(() => import('@/pages/ProjektablaufPage'), 'ProjektablaufPage') },
+      { path: 'warum-beo', lazy: lazy(() => import('@/pages/WarumBeoPage'), 'WarumBeoPage') },
+      { path: 'privatkunden', lazy: lazy(() => import('@/pages/PrivatkundenPage'), 'PrivatkundenPage') },
+      { path: 'fachpartner', lazy: lazy(() => import('@/pages/FachpartnerPage'), 'FachpartnerPage') },
+      { path: 'anfrage', lazy: lazy(() => import('@/pages/AnfragePage'), 'AnfragePage') },
+      { path: 'kontakt', lazy: lazy(() => import('@/pages/KontaktPage'), 'KontaktPage') },
+      { path: 'ueber-uns', lazy: lazy(() => import('@/pages/UeberUnsPage'), 'UeberUnsPage') },
+      { path: 'impressum', lazy: lazy(() => import('@/pages/ImpressumPage'), 'ImpressumPage') },
+      { path: 'datenschutz', lazy: lazy(() => import('@/pages/DatenschutzPage'), 'DatenschutzPage') },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
