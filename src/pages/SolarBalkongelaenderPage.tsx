@@ -64,9 +64,10 @@ export function SolarBalkongelaenderPage() {
                   <Img
                     src={solarBild(v.nr, 'beispiel')}
                     alt={`Visualisierung Solar-Balkongeländer, Beispiel ${v.beispiel}`}
-                    width={432}
-                    height={304}
-                    priority={i < 3}
+                    width={1600}
+                    height={1200}
+                    responsive
+                    sizes="(min-width: 1024px) 15vw, 33vw"
                     className="aspect-[4/5] h-full w-full object-cover"
                   />
                 </li>
@@ -114,8 +115,10 @@ export function SolarBalkongelaenderPage() {
                       <Img
                         src={solarBild(v.nr, 'foto')}
                         alt={`Visualisierung Solar-Balkongeländer Variante ${v.nr}, ${v.name}`}
-                        width={432}
-                        height={332}
+                        width={1600}
+                        height={1200}
+                        responsive
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         deferred
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                       />
@@ -169,8 +172,10 @@ export function SolarBalkongelaenderPage() {
                     <Img
                       src={solarBild(v.nr, 'beispiel')}
                       alt={`Visualisierung Beispiel ${v.nr}: Solar-Balkongeländer am Objekt ${v.beispiel}`}
-                      width={432}
-                      height={304}
+                      width={1600}
+                      height={1200}
+                      responsive
+                      sizes="(min-width: 1024px) 33vw, 50vw"
                       deferred
                       className="h-full w-full object-cover"
                     />

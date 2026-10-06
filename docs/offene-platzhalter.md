@@ -58,9 +58,8 @@ Neue Bilder: im Ordner `public/images/neu/` ablegen (Dateinamen siehe `docs/bild
 
 ## Solar-Balkongeländer (`src/data/solarBalkon.ts`)
 
-- Bilder stammen aus der Übersichtsgrafik `bilder-original/Solar-Balkongelaender-Uebersicht.jpg` (1312 × 1199) und sind deshalb klein (je etwa 215 px breit, für die Website verdoppelt). Schärfere Einzelbilder pro Variante würden die Seite deutlich aufwerten. Dateinamen: `public/images/solar-balkongelaender/variante-<1–6>-<foto|schnitt|explosion|beispiel>.webp`.
-- In der Vorlage passen einige Nummern in den Schnitten nicht zur Legende (z. B. Schnitt D zeigt «8», Legende endet bei 7; Schnitt B zeigt «3» doppelt). Die Legenden wurden wörtlich übernommen. Bitte in der Quellgrafik prüfen.
-- Die Vorlage zeigt im Kopf noch ein älteres BEO-Logo. Auf der Website wird die Grafik nur in Ausschnitten ohne Logo verwendet.
+- Fotos und Beispiele: 12 Visualisierungen aus Kling (Originale in `bilder-original/solar/`). Schnitte und Explosionszeichnungen sind als SVG gezeichnet.
+- Empfohlen neu zu erzeugen, weil das Solar-Geländer kaum sichtbar ist: `variante-1-foto` (Solarmodule nur am Dachrand), `variante-2-beispiel` und `variante-4-beispiel` (Solarzellen kaum erkennbar), `variante-5-foto` (Module eher im Boden als im Geländer), `variante-6-beispiel` (Solar auf dem Terrassendach statt im Geländer).
 - Aussage «In der ganzen Schweiz und Europa» stammt aus der Vorlage. Bitte bestätigen, dass sie so gelten soll.
 
 ## Inhalte zur fachlichen Prüfung (keine Platzhalter, aber abgeleitet)

@@ -5,19 +5,12 @@
 - **Inhaltsquelle:** docs/firmentext.md
 - **Claim (ab 05.10.2026):** «Stahl. Glas. Solar. Für Generationen.» – identisch mit dem Slogan im Logo. «Alles aus einer Hand» bleibt Leistungsversprechen (Warum BEO, Produktvorteile).
 
-## Logo (ab 05.10.2026, Gold-Fassung)
+## Logo (ab 06.10.2026, Gold-Fassung v3)
 
-Offizielles Logo: Metall-Schriftzug «BEO» mit Goldkanten, darunter «STAHL & GLASBAU», Goldlinie und Slogan «Stahl. Glas. Solar. Für Generationen.»
-Original mit transparentem Hintergrund: `bilder-original/logo/BEO-Logo-Gold.png` (2172 × 724). Gestaltet für dunklen Grund.
-Vorherige Silber-Fassung: `bilder-original/logo/v1-silber/`.
+Offizielles Logo: Metall-Schriftzug «BEO» mit klaren Goldkanten, darunter «STAHL & GLASBAU» (ohne Slogan).
+Original mit transparentem Hintergrund: `bilder-original/logo/BEO-Logo-Gold-v3.png`. Gestaltet für dunklen Grund.
+Frühere Fassungen: `bilder-original/logo/v1-silber/`, `bilder-original/logo/v2-gold-mit-slogan/`.
 
-Website-Dateien in `public/brand/`:
-
-| Datei | Verwendung |
-|---|---|
-| `logo-kompakt-dunkel.webp` | Header (ohne Linie und Slogan) |
-| `logo-dunkel.webp` | Footer (mit Slogan) |
-| `logo.png` | Strukturierte Daten, Weitergabe (800 px, transparent) |
-| `*-hell.webp`, `logo-inverse.png` | identische Kopien, damit bestehende Verweise funktionieren |
-
-Icons in `public/`: `favicon-32.png`, `favicon-64.png` (Buchstabe «B»), `apple-touch-icon.png`, `icon-512.png` (Schriftzug «BEO»), jeweils auf Anthrazit.
+Website-Dateien in `public/brand/`: `logo-kompakt-dunkel.webp` (Header), `logo-dunkel.webp` (Footer), `logo.png` (strukturierte Daten). Die `-hell`-Dateien und `logo-inverse.png` sind identische Kopien für bestehende Verweise.
+Icons in `public/`: `favicon-32.png`, `favicon-64.png` (Buchstabe «B»), `apple-touch-icon.png`, `icon-512.png` (Schriftzug «BEO»).
+Bei einem Logo-Wechsel die Versionskennung `V` in `src/components/ui/Logo.tsx` und die `?v=`-Angaben der Favicons in `index.html` erhöhen.

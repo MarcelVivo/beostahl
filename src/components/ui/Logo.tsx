@@ -4,18 +4,18 @@ import { cx } from '@/lib';
 interface Props {
   /** Hintergrund, auf dem das Logo steht */
   tone?: 'light' | 'dark';
-  /** kompakt: ohne Slogan (Header) · voll: mit Slogan «Stahl. Glas. Solar. Für Generationen.» (Footer) */
+  /** kompakt: Header (48 px hoch) · voll: Footer (grössere Darstellung) */
   variant?: 'kompakt' | 'voll';
   className?: string;
 }
 
 const files = {
-  kompakt: { dark: '/brand/logo-kompakt-dunkel.webp', light: '/brand/logo-kompakt-hell.webp', w: 412, h: 120 },
-  voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 640, h: 220 },
+  kompakt: { dark: '/brand/logo-kompakt-dunkel.webp', light: '/brand/logo-kompakt-hell.webp', w: 429, h: 120 },
+  voll: { dark: '/brand/logo-dunkel.webp', light: '/brand/logo-hell.webp', w: 640, h: 179 },
 };
 
 /** Versionskennung: bei einem Logo-Wechsel erhöhen, damit Browser die neue Datei laden */
-const V = '?v=3';
+const V = '?v=4';
 
 /** Logo als Link zur Startseite. */
 export function Logo({ tone = 'dark', variant = 'kompakt', className }: Props) {
