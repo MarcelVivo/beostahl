@@ -59,7 +59,8 @@ Neue Bilder: im Ordner `public/images/neu/` ablegen (Dateinamen siehe `docs/bild
 ## Solar-Balkongeländer (`src/data/solarBalkon.ts`)
 
 - Fotos und Beispiele: 12 Visualisierungen aus Kling (Originale in `bilder-original/solar/`). Schnitte und Explosionszeichnungen sind als SVG gezeichnet.
-- Empfohlen neu zu erzeugen, weil das Solar-Geländer kaum sichtbar ist: `variante-1-foto` (Solarmodule nur am Dachrand), `variante-2-beispiel` und `variante-4-beispiel` (Solarzellen kaum erkennbar), `variante-5-foto` (Module eher im Boden als im Geländer), `variante-6-beispiel` (Solar auf dem Terrassendach statt im Geländer).
+- Zweiter Durchgang (06.10.2026) für Variante 1 Foto, 2/4/6 Beispiel und 5 Foto: Solar-Geländer jetzt klar sichtbar. Erste Fassungen als `-v1` in `bilder-original/solar/`.
+- Dritter Durchgang für Variante 2 und 6 (Fassungen `-v2` archiviert). Variante 2 korrekt (rahmenloses Solarglas). Variante 6 zeigt oben Glas, die Solarmodule sitzen aber schräg unter der Balkonplatte statt als untere Hälfte im Geländer – bei Bedarf nochmals erzeugen.
 - Aussage «In der ganzen Schweiz und Europa» stammt aus der Vorlage. Bitte bestätigen, dass sie so gelten soll.
 
 ## Inhalte zur fachlichen Prüfung (keine Platzhalter, aber abgeleitet)
